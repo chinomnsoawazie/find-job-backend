@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  name_of_institution: MyString
+  degree_or_certificate: MyString
+  gpa: 1.5
+  start_date: 2019-12-25
+  end_date: 2019-12-25
+  country: MyString
+  state: MyString
+  city: MyString
+  major: MyString
+  minor: MyString
+
+two:
+  user: two
+  name_of_institution: MyString
+  degree_or_certificate: MyString
+  gpa: 1.5
+  start_date: 2019-12-25
+  end_date: 2019-12-25
+  country: MyString
+  state: MyString
+  city: MyString
+  major: MyString
+  minor: MyString

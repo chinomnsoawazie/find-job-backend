@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  descripton: MyString
+  issued_by: MyString
+  issuing_date: 2019-12-25
+  renewable: false
+  valid_until: 2019-12-25
+
+two:
+  user: two
+  descripton: MyString
+  issued_by: MyString
+  issuing_date: 2019-12-25
+  renewable: false
+  valid_until: 2019-12-25

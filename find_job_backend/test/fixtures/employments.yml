@@ -1,0 +1,29 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  company_name: MyString
+  job_title: MyString
+  start_month: 1
+  start_year: 1
+  end_month: 1
+  end_year: 1
+  duties: MyString
+  country: MyString
+  city: MyString
+  state: MyString
+  currently_work_here: false
+
+two:
+  user: two
+  company_name: MyString
+  job_title: MyString
+  start_month: 1
+  start_year: 1
+  end_month: 1
+  end_year: 1
+  duties: MyString
+  country: MyString
+  city: MyString
+  state: MyString
+  currently_work_here: false

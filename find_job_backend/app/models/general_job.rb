@@ -1,0 +1,2 @@
+class GeneralJob < ApplicationRecord
+end

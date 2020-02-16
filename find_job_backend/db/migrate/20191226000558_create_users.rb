@@ -11,7 +11,7 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.string :city
       t.integer :age
       t.string :highest_education
-      t.string :years_of_experience
+      t.integer :years_of_experience
 
       t.timestamps
     end

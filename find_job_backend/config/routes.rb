@@ -13,4 +13,8 @@ Rails.application.routes.draw do
 
   resources :notes
   resources :tasks
+
+  get 'apikeys', :to => 'users#jobs_api_keys'
+
+
 end

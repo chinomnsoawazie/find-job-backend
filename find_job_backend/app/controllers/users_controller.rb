@@ -1,10 +1,16 @@
 class UsersController < ApplicationController
-    skip_before_action :authorized, only: [:create]
+    # skip_before_action :authorized, only: [:create, :jobs_api_keys]
 
     def index
       @user = User.all
       render json: @users
-  
+    end
+
+    def jobs_api_keys
+      usaAPI =  ENV["USA_JOBS"]
+      googleMapsAPI = ENV["GOOGLE_MAPS_API_KEY"]
+      myEmail = ENV["MY_EMAIL"]
+      render json: {USAJobsAPIKey: usaAPI, GOOGLE_MAPS_API_KEY: googleMapsAPI, myEmail: myEmail }
     end
   
     def show

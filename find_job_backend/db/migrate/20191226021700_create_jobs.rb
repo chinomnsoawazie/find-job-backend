@@ -2,24 +2,25 @@ class CreateJobs < ActiveRecord::Migration[6.0]
   def change
     create_table :jobs do |t|
       t.belongs_to :user, null: true, foreign_key: false
+      t.integer :usaJobs_job_id
+      t.string :position_id
       t.string :job_title
-      t.string :company_name
-      t.string :country
-      t.string :state
-      t.string :city
-      t.integer :zipcode
-      t.integer :pay
+      t.string :organization_name
+      t.string :url
+      t.string :department
       t.string :job_type
-      t.string :intro
-      t.string :requirement
-      t.string :employer_strongpoints
-      t.string :benefits
-      t.string :education
       t.string :schedule
       t.string :description
-      t.string :duties
-      t.string :url
-      t.string :industry
+      t.string :requirement
+      t.string :maximum_pay
+      t.string :minimum_pay
+      t.string :pay_period
+      t.string :employer_strongpoints
+      t.string :who_may_apply
+      t.string :hiring_path
+      t.string :location
+      t.string :job_posting_date
+      t.string :application_close_date
       t.boolean :applied_key
       t.boolean :favorite_key
 

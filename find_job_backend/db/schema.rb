@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_28_044913) do
+ActiveRecord::Schema.define(version: 2019_12_27_200929) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,49 +62,27 @@ ActiveRecord::Schema.define(version: 2019_12_28_044913) do
     t.index ["user_id"], name: "index_employments_on_user_id"
   end
 
-  create_table "general_jobs", force: :cascade do |t|
-    t.string "job_title"
-    t.string "company_name"
-    t.string "country"
-    t.string "state"
-    t.string "city"
-    t.integer "zipcode"
-    t.integer "pay"
-    t.string "job_type"
-    t.string "intro"
-    t.string "requirement"
-    t.string "employer_strongpoints"
-    t.string "benefits"
-    t.string "education"
-    t.string "schedule"
-    t.string "description"
-    t.string "duties"
-    t.string "url"
-    t.string "industry"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "jobs", force: :cascade do |t|
     t.bigint "user_id"
+    t.integer "usaJobs_job_id"
+    t.string "position_id"
     t.string "job_title"
-    t.string "company_name"
-    t.string "country"
-    t.string "state"
-    t.string "city"
-    t.integer "zipcode"
-    t.integer "pay"
+    t.string "organization_name"
+    t.string "url"
+    t.string "department"
     t.string "job_type"
-    t.string "intro"
-    t.string "requirement"
-    t.string "employer_strongpoints"
-    t.string "benefits"
-    t.string "education"
     t.string "schedule"
     t.string "description"
-    t.string "duties"
-    t.string "url"
-    t.string "industry"
+    t.string "requirement"
+    t.string "maximum_pay"
+    t.string "minimum_pay"
+    t.string "pay_period"
+    t.string "employer_strongpoints"
+    t.string "who_may_apply"
+    t.string "hiring_path"
+    t.string "location"
+    t.string "job_posting_date"
+    t.string "application_close_date"
     t.boolean "applied_key"
     t.boolean "favorite_key"
     t.datetime "created_at", precision: 6, null: false
@@ -177,7 +155,7 @@ ActiveRecord::Schema.define(version: 2019_12_28_044913) do
     t.string "city"
     t.integer "age"
     t.string "highest_education"
-    t.string "years_of_experience"
+    t.integer "years_of_experience"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

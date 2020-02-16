@@ -2,13 +2,10 @@ class JobsController < ApplicationController
 
   
     def index
-      if logged_in?
-        jobs = Job.all.select{|user_id| user_id.to_s.match(current_user_id) }
+
+        jobs = Job.all.select{|job| job.user_id == params[:user_id].to_i}
+        # byebug
         render json: jobs
-      else
-        generalJobs = GeneralJob.all
-        render json: generalJobs
-      end
     end
     
     def show
@@ -18,8 +15,9 @@ class JobsController < ApplicationController
     
     def create
         job = Job.create(job_params)
+        allJobs = Job.all
         if job.valid?
-          render json: job
+          render json: {job: job, allJobs: allJobs}
         else
           render json:{errors: job.errors.full_messages}
         end
@@ -27,8 +25,9 @@ class JobsController < ApplicationController
     
     def update
         job = Job.find(params[:id])
+        allJobs = Job.all
         if job.update(job_params)
-          render json: job
+          render json: {job: job, allJobs: allJobs}
         else
           render json: job.errors, status: :unprocessable_entity
         end
@@ -41,6 +40,6 @@ class JobsController < ApplicationController
     private
     
     def job_params
-        params.require(:job).permit(:user_id, :job_title, :company_name, :country, :state, :city, :zipcode, :pay, :job_type, :intro, :requirement, :employer_strongpoints, :benefits, :education, :schedule, :description, :duties, :url, :industry, :applied_key, :favorite_key)
+        params.require(:job).permit(:user_id, :usaJobs_job_id, :position_id, :job_title, :organization_name, :url, :department, :job_type, :schedule, :description, :requirement, :maximum_pay, :minimum_pay, :pay_period, :employer_strongpoints, :who_may_apply, :hiring_path, :location, :job_posting_date, :application_close_date, :applied_key, :favorite_key)
     end
 end

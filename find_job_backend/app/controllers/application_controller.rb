@@ -6,7 +6,6 @@ class ApplicationController < ActionController::API
   end
 
   def encode_token(payload)
-    # should store secret in env variable
     JWT.encode(payload, hmac_secret, 'HS256')
   end
 
@@ -57,7 +56,7 @@ class ApplicationController < ActionController::API
         return nil
     end
     #below is lacking in his code
-    # payload["user_id"]
+    payload["user_id"]
   end
 
 

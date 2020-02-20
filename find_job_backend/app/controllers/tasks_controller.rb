@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
     def index
-        tasks = Task.all 
+        tasks = User.find(params[:user_id]).tasks
         render json: tasks
     end
     
@@ -10,9 +10,10 @@ class TasksController < ApplicationController
     end
     
     def create
-        task = Task.create(task_params)
+      task = Task.create(task_params)
+      userToDos = User.find(params[:user_id]).tasks
         if task.valid?
-          render json: task
+          render json: {userToDos: userToDos}
         else
           render json:{errors: task.errors.full_messages}
         end
@@ -20,8 +21,9 @@ class TasksController < ApplicationController
     
     def update
         task = Task.find(params[:id])
+        userToDos = User.find(params[:user_id]).tasks
         if task.update(task_params)
-          render json: task
+          render json: {userToDos: userToDos}
         else
           render json: task.errors, status: :unprocessable_entity
         end
@@ -29,11 +31,13 @@ class TasksController < ApplicationController
     
     def destroy
         Task.destroy(params[:id])
+        userToDos = User.find(params[:user_id]).tasks
+        render json: {userToDos: userToDos}
     end
     
       private
     
     def task_params
-        params.require(:task).permit(:job_id, :description, :due_date, :done_status)
+        params.require(:task).permit(:job_id, :user_id, :description, :due_date, :done_status)
     end
 end

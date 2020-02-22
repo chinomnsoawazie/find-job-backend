@@ -26,11 +26,10 @@ end
 end
 
 preferencenames = ['Tech', 'Education', 'Engineering']
-ranges = ['20000 - 39000', '40000 - 60000', '61000 - 80000', '81000 - 120000']
 postDatesStart = ['2019/10/01', '2019/10/12', '2020/10/25']
 postDatesEnd = ['2019/12/01', '2019/12/12', '2020/12/25']
 4.times do
-    Preference.create(user_id: User.first.id, name: preferencenames.sample, country: 'United States', state: Faker::Address.state, city: Faker::Address.city, city_population: Faker::Number.between(from: 5000, to: 2000000), pay_range: ranges.sample, job_title: Faker::Job.title, industry: Faker::Company.industry, posting_date_start: postDatesStart.sample, posting_date_stop: postDatesEnd.sample)
+    Preference.create(user_id: User.first.id, name: preferencenames.sample, country: 'United States', state: Faker::Address.state, city: Faker::Address.city, city_population: Faker::Number.between(from: 5000, to: 2000000), min_pay: Faker::Number.between(from: 30000, to: 200000), job_title: Faker::Job.title, industry: Faker::Company.industry, posting_date_start: postDatesStart.sample, application_closing_date: postDatesEnd.sample)
 end
 
 prolevels = ['beginner', 'intermediate', 'expert']

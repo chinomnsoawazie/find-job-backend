@@ -7,11 +7,11 @@ class CreatePreferences < ActiveRecord::Migration[6.0]
       t.string :state
       t.string :city
       t.integer :city_population
-      t.string :pay_range
+      t.integer :min_pay
       t.string :job_title
       t.string :industry
       t.date :posting_date_start
-      t.date :posting_date_stop
+      t.date :application_closing_date
 
       t.timestamps
     end

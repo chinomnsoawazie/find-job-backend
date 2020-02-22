@@ -11,8 +11,9 @@ class PreferencesController < ApplicationController
     
     def create
         preference = Preference.create(preference_params)
+        userPreferences = User.find(params[:user_id]).preferences
         if preference.valid?
-          render json: preference
+          render json: {userPreferences: userPreferences}
         else
           render json:{errors: preference.errors.full_messages}
         end
@@ -20,8 +21,9 @@ class PreferencesController < ApplicationController
     
     def update
         preference = Preference.find(params[:id])
+        userPreferences = User.find(params[:user_id]).preferences
         if preference.update(preference_params)
-          render json: preference
+          render json: {userPreferences: userPreferences}
         else
           render json: preference.errors, status: :unprocessable_entity
         end
@@ -29,11 +31,13 @@ class PreferencesController < ApplicationController
     
     def destroy
         Preference.destroy(params[:id])
+        userPreferences = User.find(params[:user_id]).preferences
+        render json: {userPreferences: userPreferences}
     end
     
     private
     
     def preference_params
-        params.require(:preference).permit(:user_id, :name, :country, :state, :city, :city_population, :pay_range, :job_title, :industry)
+        params.require(:preference).permit(:id, :user_id, :name, :country, :state, :city, :city_population, :min_pay, :job_title, :industry)
     end
 end

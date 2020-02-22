@@ -115,11 +115,11 @@ ActiveRecord::Schema.define(version: 2019_12_27_200929) do
     t.string "state"
     t.string "city"
     t.integer "city_population"
-    t.string "pay_range"
+    t.integer "min_pay"
     t.string "job_title"
     t.string "industry"
     t.date "posting_date_start"
-    t.date "posting_date_stop"
+    t.date "application_closing_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_preferences_on_user_id"

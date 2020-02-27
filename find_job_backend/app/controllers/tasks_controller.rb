@@ -1,14 +1,4 @@
 class TasksController < ApplicationController
-    def index
-        tasks = User.find(params[:user_id]).tasks
-        render json: tasks
-    end
-    
-    def show
-        task = Task.find(params[:id])
-        render json: task
-    end
-    
     def create
       task = Task.create(task_params)
       userToDos = User.find(params[:user_id]).tasks
@@ -36,7 +26,6 @@ class TasksController < ApplicationController
     end
     
       private
-    
     def task_params
         params.require(:task).permit(:job_id, :user_id, :description, :due_date, :done_status)
     end

@@ -7,6 +7,7 @@ class CreateEducations < ActiveRecord::Migration[6.0]
       t.float :gpa
       t.date :start_date
       t.date :end_date
+      t.boolean :complete_status
       t.string :country
       t.string :state
       t.string :city

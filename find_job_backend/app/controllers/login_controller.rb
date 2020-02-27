@@ -1,5 +1,3 @@
-
-
 class LoginController < ApplicationController
 
   def create

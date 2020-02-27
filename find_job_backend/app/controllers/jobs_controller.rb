@@ -1,18 +1,4 @@
 class JobsController < ApplicationController
-
-  
-    def index
-
-        jobs = Job.all.select{|job| job.user_id == params[:user_id].to_i}
-        # byebug
-        render json: jobs
-    end
-    
-    def show
-        job = Job.find(params[:id])
-        render json: job
-    end
-    
     def create
       job = Job.create(job_params)
       allUserJobs = User.all.find(params[:user_id]).jobs
@@ -37,12 +23,10 @@ class JobsController < ApplicationController
         Job.destroy(params[:id])
         allUserJobs = User.all.find(params[:user_id]).jobs
         render json: allUserJobs
-
     end
     
     private
-    
     def job_params
-        params.require(:job).permit(:id, :user_id, :usaJobs_job_id, :position_id, :job_title, :organization_name, :url, :department, :job_type, :schedule, :description, :requirement, :maximum_pay, :minimum_pay, :pay_period, :employer_strongpoints, :who_may_apply, :hiring_path, :location, :job_posting_date, :application_close_date, :applied_key, :favorite_key)
+        params.require(:job).permit(:user_id, :usaJobs_job_id, :position_id, :job_title, :organization_name, :url, :department, :job_type, :schedule, :description, :requirement, :maximum_pay, :minimum_pay, :pay_period, :employer_strongpoints, :who_may_apply, :hiring_path, :location, :job_posting_date, :application_close_date, :applied_key, :favorite_key)
     end
 end

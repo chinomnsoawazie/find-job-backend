@@ -14,11 +14,12 @@ User.create(first_name: 'admin', last_name: 'admin', username: "admin", password
 requirements= ['SQL', 'customer service', 'project management']
 
 Certification.create(user_id: User.first.id, description: 'Certified Fireman', issued_by: 'FFS', issuing_date: '2010/09/06', renewable: Faker::Boolean.boolean, valid_until: '2020/10/12' )
-Education.create(user_id: User.first.id, name_of_institution: Faker::Educator.university, degree_or_certificate: Faker::Educator.degree, gpa: 3.5, start_date: '2001/01/09', end_date: '2006/06/10', country: 'Nigeria', state: 'Anambra', city: 'Awka', major: 'Electrical Electronics Engineering', minor: 'N/A')
+Education.create(user_id: User.first.id,  complete_status: true, name_of_institution: Faker::Educator.university, degree_or_certificate: Faker::Educator.degree, gpa: 3.5, start_date: '2001/01/09', end_date: '2006/06/10', country: 'Nigeria', state: 'Anambra', city: 'Awka', major: 'Electrical Electronics Engineering', minor: 'N/A')
 Membership.create(user_id: User.first.id, organization: 'IEEE', start_date: '2001/01/01', end_date: '2020/01/01')
 
+dates = ['2019/10/01', '2019/10/12', '2020/10/25']
 4.times do
-    Employment.create(user_id: User.first.id, company_name: Faker::Company.name, job_title: Faker::Job.title, start_month: Faker::Number.between(from: 1, to: 12), start_year: Faker::Number.between(from: 1980, to: 2000), end_month: Faker::Number.between(from: 1, to: 12), end_year: Faker::Number.between(from: 2001, to: 2020), duties: Faker::Lorem.paragraph(sentence_count: 3, supplemental: true, random_sentences_to_add: 5), country: 'United States', state: Faker::Address.state, city: Faker::Address.city, currently_work_here: Faker::Boolean.boolean)
+    Employment.create(user_id: User.first.id, company_name: Faker::Company.name, job_title: Faker::Job.title, start_date: dates.sample, end_date: dates.sample, duties: Faker::Lorem.paragraph(sentence_count: 3, supplemental: true, random_sentences_to_add: 5), country: 'United States', state: Faker::Address.state, city: Faker::Address.city, currently_work_here: Faker::Boolean.boolean)
 end
 
 5.times do 

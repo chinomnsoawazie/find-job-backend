@@ -12,7 +12,6 @@ class MembershipsController < ApplicationController
     def update
         membership = Membership.find(params[:id])
         userMemberships = User.find(params[:user_id]).memberships
-        # byebug
         if membership.update(membership_params)
           render json: userMemberships
         else
@@ -28,6 +27,6 @@ class MembershipsController < ApplicationController
     
     private
     def membership_params
-        params.require(:membership).permit(:user_id, :organization, :start_date, :end_date)
+        params.require(:membership).permit(:id, :user_id, :organization, :start_date, :end_date)
     end
 end

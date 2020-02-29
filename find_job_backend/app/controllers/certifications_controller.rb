@@ -27,6 +27,6 @@ class CertificationsController < ApplicationController
 
     private
     def certification_params
-        params.require(:certification).permit(:user_id, :description, :issued_by, :issuing_date, :renewable, :valid_until)
+        params.require(:certification).permit(:id, :user_id, :description, :issued_by, :issuing_date, :renewable, :valid_until)
     end
 end

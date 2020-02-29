@@ -28,6 +28,6 @@ class PreferencesController < ApplicationController
     private
     
     def preference_params
-        params.require(:preference).permit(:user_id, :name, :country, :state, :city, :city_population, :min_pay, :job_title, :industry)
+        params.require(:preference).permit(:id, :user_id, :name, :country, :state, :city, :city_population, :min_pay, :job_title, :industry, :posting_date_start, :application_closing_date)
     end
 end

@@ -27,6 +27,6 @@ class EducationsController < ApplicationController
     
     private
     def education_params
-        params.require(:education).permit(:user_id, :name_of_institution, :degree_or_certificate, :complete_status, :gpa, :start_date, :end_date, :country, :state, :city, :major, :minor, :complete_status)
+        params.require(:education).permit(:id, :user_id, :name_of_institution, :degree_or_certificate, :complete_status, :gpa, :start_date, :end_date, :country, :state, :city, :major, :minor, :complete_status)
     end
 end

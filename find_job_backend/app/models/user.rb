@@ -10,6 +10,6 @@ class User < ApplicationRecord
     has_many :tasks, through: :jobs, dependent: :destroy
     has_many :notes, through: :jobs, dependent: :destroy
 
-    # validates_presence_of :username
-    # validates_uniqueness_of :username, :case_sensitive => false
+    validates_presence_of :username
+    validates_uniqueness_of :username, :case_sensitive => false
 end

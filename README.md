@@ -57,8 +57,8 @@
           <li><a href="#internal-file-structure">Internal file structure</a></li>
            <li><a href="#internal-dataset">Internal dataset</a></li>
 
-      </ul>
-    </li>
+  </ul>
+   </li>
    <li><a href="#planned-improvements">Planned improvements</a></li>
    <li><a href="#contact">Contact</a></li>
    <li><a href="#credits">Credits</a></li>

@@ -8,27 +8,25 @@
 <p align="center"> <img src="https://img.shields.io/badge/-Technologies%20Used-blue" style="max-width:50%;"> </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/CSS-3.0-blue" style="max-width:50%;">  
-  <img src="https://img.shields.io/badge/HTML-5.2-green" style="max-width:50%;">
-  <img src="https://img.shields.io/badge/JavaScript-1.8.5-blue" style="max-width:50%;">
-  <img src="https://img.shields.io/badge/ReactJS-16.12.0-yellowgreen" style="max-width:50%;">
-  <img src="https://img.shields.io/badge/Redux-4.0.5-brightgreen" style="max-width:50%;">
-  <img src="https://img.shields.io/badge/Redux%20Thunk-2.3.0-yellowgreen" style="max-width:50%;">
-  <img src="https://img.shields.io/badge/Google%20Maps%20API-lightgrey" style="max-width:50%;">
-  <img src="https://img.shields.io/badge/axios-0.19.1-red" style="max-width:50%;">
+  <img src="https://img.shields.io/badge/Ruby-2.7.0-red" style="max-width:50%;">
+  <img src="https://img.shields.io/badge/PostgreSQL-12.1-orange" style="max-width:50%;">
+  <img src="https://img.shields.io/badge/Ruby%20on%20Rails-6.0.2-red" style="max-width:50%;">
+  <img src="https://img.shields.io/badge/Active%20model%20serializers-0.10.0-yellow" style="max-width:50%;">
+  <img src="https://img.shields.io/badge/Dotenv%20Rails-2.7-orange" style="max-width:50%;">
+  <img src="https://img.shields.io/badge/Bycrypt-3.1.7-blue" style="max-width:50%;">
+  <img src="https://img.shields.io/badge/JWT-1.5.4-red" style="max-width:50%;">
  </p>
   
  <p align="center"> <img src="https://img.shields.io/badge/-Notices-blue" style="max-width:50%;"> </p>
-
+   
  <p align="center"> 
-    <a target="_blank" rel="noopener noreferrer" href="https://github.com/chinomnsoawazie/find-job-backend">
-      <img src="https://img.shields.io/badge/Backend%20Repository-Click%20here-green" style="max-width:50%;">
-    </a>
-   <img src="https://img.shields.io/badge/Status-Work%20in%20progress%20-brightgreen" style="max-width:50%;">
- </p>
+  <a target="blank" rel="noopener noreferrer" href="https://github.com/chinomnsoawazie/station-locate-frontend">
+    <img src="https://img.shields.io/badge/Frontend%20repository-Click%20here-green" style="max-width:50%;">
+  </a>
+   <img src="https://img.shields.io/badge/Status-Making%20mobile%20app%20version-brightgreen" style="max-width:50%;">
+</p>
  
  
-  
   <h1>
   <a id="table-of-contents" class="anchor" href="#contents">  </a>
   Table of Contents
